@@ -6,6 +6,11 @@ const routes: Routes = [
     path: 'pizza',
     loadChildren: () => import('./pizza/pizza.module').then(m => m.PizzaModule)
   },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'pizza'
+  }
 ];
 
 @NgModule({

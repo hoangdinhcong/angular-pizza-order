@@ -3,16 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { PizzaRoutingModule } from './pizza-routing.module';
 import { PizzaComponent } from './pizza.component';
-import { PizzaService } from '../core/services/pizza.service';
-import { PizzaItemComponent } from '../shared/components/pizza/pizza-item/pizza-item.component';
-
+import { PizzaPageListComponent } from './pizza-page-list/pizza-page-list.component';
+import { PizzaPageDetailComponent } from './pizza-page-detail/pizza-page-detail.component';
+import { PizzaSharedModule } from '../shared/components/pizza/pizza-shared.module';
 
 @NgModule({
-  declarations: [PizzaComponent, PizzaItemComponent],
+  declarations: [PizzaComponent, PizzaPageListComponent, PizzaPageDetailComponent],
   imports: [
     CommonModule,
+    PizzaSharedModule,
     PizzaRoutingModule
-  ],
-  providers: [PizzaService]
+  ]
 })
 export class PizzaModule { }

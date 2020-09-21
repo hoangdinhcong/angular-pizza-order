@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { PizzaComponent } from './pizza.component';
-import { PizzaListComponent } from './pizza-list/pizza-list.component';
-import { PizzaDetailComponent } from './pizza-detail/pizza-detail.component';
+import { PizzaPageListComponent } from './pizza-page-list/pizza-page-list.component';
+import { PizzaPageDetailComponent } from './pizza-page-detail/pizza-page-detail.component';
 
 const routes: Routes = [
   {
@@ -12,12 +12,12 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: PizzaListComponent
+        component: PizzaPageListComponent
       },
-      {
-        path: ':id',
-        component: PizzaDetailComponent
-      }
+      // {
+      //   path: ':id',
+      //   component: PizzaPageDetailComponent
+      // }
     ]
   }
 ];
