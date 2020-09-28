@@ -1,5 +1,5 @@
-<ng-container *ngIf="dataSource">
-    <ng-container *ngFor="let item of dataSource | async">
-        <app-pizza-item [pizza]=item></app-pizza-item>
-    </ng-container>
-</ng-container>
+<div class="row" *ngIf="dataSource">
+  <div class="col-3" *ngFor="let item of dataSource | async">
+    <app-pizza-item [pizza]=item></app-pizza-item>
+  </div>
+</div>

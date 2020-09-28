@@ -22,7 +22,7 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
 
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
