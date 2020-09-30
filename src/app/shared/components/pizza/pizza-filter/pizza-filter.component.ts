@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PizzaFilterComponent implements OnInit {
 
+  showFilter = false;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.showFilter = localStorage.getItem('showFilter') === String(true);
+  }
+
+  filterToggle(): void {
+    this.showFilter = !this.showFilter;
+    localStorage.setItem('showFilter', String(this.showFilter));
   }
 
 }

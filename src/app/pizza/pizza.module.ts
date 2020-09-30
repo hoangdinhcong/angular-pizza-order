@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { PizzaRoutingModule } from './pizza-routing.module';
 import { PizzaComponent } from './pizza.component';
@@ -12,6 +13,8 @@ import { PizzaSharedModule } from '../shared/components/pizza/pizza-shared.modul
   imports: [
     CommonModule,
     PizzaSharedModule,
+    MatDividerModule,
+
     PizzaRoutingModule
   ]
 })
