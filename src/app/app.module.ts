@@ -11,13 +11,30 @@ import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { ErrorDialogComponent } from './shared/errors/error-dialog/error-dialog.component';
+import { ErrorHandlerModule } from './core/errors/error-handler.module';
+
+
+const MaterialModule = [
+  MatToolbarModule,
+  MatButtonModule,
+  LayoutModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule,
+  MatSlideToggleModule,
+  MatDialogModule,
+];
+
 @NgModule({
   declarations: [
     AppComponent,
+    ErrorDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,16 +43,12 @@ import { FormsModule } from '@angular/forms';
     StoreModule.forRoot({}, {}),
     BrowserAnimationsModule,
     FormsModule,
+    ...MaterialModule,
 
-    MatToolbarModule,
-    MatButtonModule,
-    LayoutModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatSlideToggleModule,
+    ErrorHandlerModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ErrorDialogComponent]
 })
 export class AppModule { }

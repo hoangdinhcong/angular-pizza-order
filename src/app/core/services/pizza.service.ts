@@ -26,6 +26,17 @@ const examplePizza: Pizza[] = [
     ],
     price: 150000,
     currency: '$',
+  } as Pizza,
+  {
+    id: '2',
+    name: 'Meat Deluxe',
+    description: 'Donec nec maximus turpis. Donec ac augue lacus. Sed eleifend tempus aliquam. Nunc dapibus metus ac semper aliquam. Aenean pharetra laoreet sapien. Sed eu tortor et elit lacinia commodo. Aenean faucibus, enim et hendrerit viverra, velit nulla mollis nisl, non porttitor magna enim sed ex.',
+    thumbnail: 'https://thepizzacompany.vn/132-home_default/pizza-hawaii.jpg',
+    images: [
+      ''
+    ],
+    price: 150000,
+    currency: '$',
   } as Pizza
 ];
 

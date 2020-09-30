@@ -19,4 +19,8 @@ export class PizzaPageListComponent implements OnInit {
     console.log('yo');
   }
 
+  errorTrigger(): void {
+    throw Error('Local frontend error');
+  }
+
 }

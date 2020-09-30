@@ -1,5 +1,9 @@
-<div class="row" *ngIf="dataSource">
-  <div class="col-3" *ngFor="let item of dataSource | async">
+<div class="row" *ngIf="dataSource ;else noResult">
+  <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let item of dataSource | async">
     <app-pizza-item [pizza]=item></app-pizza-item>
   </div>
 </div>
+
+<ng-template #noResult>
+  Out of Pizza !!! Please come back later ❤️
+</ng-template>

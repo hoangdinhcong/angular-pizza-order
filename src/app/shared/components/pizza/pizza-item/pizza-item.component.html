@@ -4,7 +4,9 @@
   </mat-card-header>
   <img mat-card-image [src]="pizza.thumbnail" alt="Photo of a {{ pizza.name }}">
   <mat-card-content>
-    <p> {{ pizza.description}} </p>
+    <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+      {{ pizza.description }}
+    </p>
     <p> {{ pizza.currency }} {{ pizza.price }}</p>
   </mat-card-content>
   <mat-card-actions>
