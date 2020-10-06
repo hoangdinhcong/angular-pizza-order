@@ -4,6 +4,8 @@ import { StoreModule } from '@ngrx/store';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -18,7 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ErrorDialogComponent } from './shared/errors/error-dialog/error-dialog.component';
 import { ErrorHandlerModule } from './core/errors/error-handler.module';
-
+import { environment } from '../environments/environment';
 
 const MaterialModule = [
   MatToolbarModule,
@@ -45,6 +47,8 @@ const MaterialModule = [
     FormsModule,
     ...MaterialModule,
 
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
     ErrorHandlerModule,
   ],
   providers: [],

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { from, Observable, of } from 'rxjs';
-import { delay, filter } from 'rxjs/operators';
+import { delay, filter, map } from 'rxjs/operators';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 import { Pizza } from '../models/pizza.model';
 
@@ -46,16 +47,27 @@ const examplePizza: Pizza[] = [
 })
 export class PizzaService {
 
-  constructor() { }
+  constructor(private firestore: AngularFirestore) { }
 
   getList(): Observable<Pizza[]> {
-    return of(examplePizza).pipe(delay(1000));
+    return this.firestore.collection<Pizza>('pizzas').valueChanges({
+      idField: 'id'
+    });
+    // return of(examplePizza).pipe(delay(1000));
   }
 
-  get(id: string) {
-    return from(examplePizza).pipe(
-      filter(pizza => pizza.id === id),
-      delay(1000)
+  get(id: string): Observable<Pizza> {
+    return this.firestore.collection('pizzas').doc<Pizza>(id).valueChanges().pipe(
+      map(pizza => {
+        return {
+          ...pizza,
+          id
+        } as Pizza;
+      })
     );
+    // return from(examplePizza).pipe(
+    //   filter(pizza => pizza.id === id),
+    //   delay(1000)
+    // );
   }
 }
