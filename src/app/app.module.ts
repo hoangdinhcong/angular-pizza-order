@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -42,10 +43,15 @@ const MaterialModule = [
     BrowserModule,
     RouterModule,
     AppRoutingModule,
+
     StoreModule.forRoot({}, {}),
+
     BrowserAnimationsModule,
     FormsModule,
+
     ...MaterialModule,
+
+    FlexLayoutModule,
 
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,

@@ -7,6 +7,7 @@ import { PizzaComponent } from './pizza.component';
 import { PizzaPageListComponent } from './pizza-page-list/pizza-page-list.component';
 import { PizzaPageDetailComponent } from './pizza-page-detail/pizza-page-detail.component';
 import { PizzaSharedModule } from '../shared/components/pizza/pizza-shared.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [PizzaComponent, PizzaPageListComponent, PizzaPageDetailComponent],
@@ -14,7 +15,7 @@ import { PizzaSharedModule } from '../shared/components/pizza/pizza-shared.modul
     CommonModule,
     PizzaSharedModule,
     MatDividerModule,
-
+    FlexLayoutModule,
     PizzaRoutingModule
   ]
 })

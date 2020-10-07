@@ -16,7 +16,6 @@ export class PizzaPageListComponent implements OnInit {
 
   ngOnInit(): void {
     this.pizzas$ = this.pizzaService.getList();
-    console.log('yo');
   }
 
   errorTrigger(): void {
