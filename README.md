@@ -7,6 +7,7 @@ For learning purpose, order pizza using:
 * Fisebase
 * NgRx
 * Material
+* Flex Layout
 
 ## Development server
 
