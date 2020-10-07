@@ -1,7 +1,8 @@
-<div class="row" *ngIf="dataSource ;else noResult">
-  <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let item of dataSource | async">
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="3%" *ngIf="dataSource ;else noResult">
+  <div fxFlex="30%" *ngFor="let item of dataSource | async">
     <app-pizza-item [pizza]=item></app-pizza-item>
   </div>
+
 </div>
 
 <ng-template #noResult>
