@@ -1,5 +1,5 @@
 <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="3%" *ngIf="dataSource ;else noResult">
-  <div fxFlex="30%" *ngFor="let item of dataSource | async">
+  <div fxFlex.lg="30%" fxFlex.md="50%" *ngFor="let item of dataSource | async">
     <app-pizza-item [pizza]=item></app-pizza-item>
   </div>
 
